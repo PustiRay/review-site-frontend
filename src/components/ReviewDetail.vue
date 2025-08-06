@@ -36,7 +36,7 @@ export default {
   },
   async mounted() {
     try {
-      const res = await axios.get('https://review-site-backend-qabm.onrender.com')
+      const res = await axios.get('https://review-site-backend-qabm.onrender.co')
       const books = res.data.data
       this.book = books.find(b => b.id === parseInt(this.id))
       if (!this.book) {

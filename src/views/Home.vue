@@ -5,7 +5,7 @@ import axios from 'axios'
 const books = ref([])
 
 onMounted(async () => {
-  const res = await axios.get('https://review-site-backend-qabm.onrender.com/api/books?populate=*')
+  const res = await axios.get('https://review-site-backend-qabm.onrender.co')
   books.value = res.data.data
 })
 </script>
