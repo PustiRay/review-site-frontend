@@ -18,7 +18,7 @@
         <p><strong>Author:</strong> {{ book.Author || 'Unknown author' }}</p>
        <img
   v-if="book.Cover && book.Cover.url"
-  :src="`https://review-site-backend-qabm.onrender.com${book.Cover.url}`"
+  :src="`http://localhost:1337/api/books${book.Cover.url}`"
   alt="Cover image for {{ book.Title }}"
   class="book-cover"
 />
@@ -60,7 +60,7 @@ export default {
     async fetchBooks() {
       try {
         // Note: populate=* to get coverImage and all relations
-        const res = await axios.get('https://review-site-backend-qabm.onrender.com')
+        const res = await axios.get('http://localhost:1337/api/booksm')
         // Strapi returns data inside res.data.data
         this.books = res.data.data || []
         console.log('Fetched books:', this.books)
